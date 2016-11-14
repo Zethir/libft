@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 14:31:43 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/02 14:52:20 by cboussau         ###   ########.fr       */
+/*   Created: 2015/12/01 10:22:31 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 10:59:57 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count(char const *s, char c)
+static int		ft_count(char const *s, char c)
 {
 	int cmp;
-	int i;
+	int	i;
 
 	cmp = 0;
 	i = 0;
@@ -33,9 +33,9 @@ static int	ft_count(char const *s, char c)
 	return (cmp);
 }
 
-static int	ft_nstr(char const *s, char c)
+static int		ft_nstr(char const *s, char c)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (*s && *s != c)
@@ -46,15 +46,17 @@ static int	ft_nstr(char const *s, char c)
 	return (len);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**t;
 	int		i;
 	int		word_nb;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	word_nb = ft_count(s, c);
-	t = (char **)malloc(sizeof(char *) * (ft_count(s, c)) + 1);
+	t = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	if (t == NULL)
 		return (NULL);
 	while (word_nb--)

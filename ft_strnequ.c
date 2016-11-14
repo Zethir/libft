@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/01 13:53:45 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/01 13:56:58 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/30 13:24:21 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 10:57:14 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,18 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	if (ft_strncmp(s1, s2, n) == 0)
+	size_t	i;
+	size_t	cmp;
+
+	i = 0;
+	cmp = 0;
+	while (s1[i] && s2[i] && i < n)
+	{
+		if (s1[i] == s2[i])
+			cmp++;
+		i++;
+	}
+	if (cmp == i)
 		return (1);
-	else
-		return (0);
+	return (0);
 }

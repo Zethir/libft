@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 18:13:19 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/02 18:34:46 by cboussau         ###   ########.fr       */
+/*   Created: 2015/12/02 14:34:21 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 09:35:45 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,22 @@
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
+	t_list	*start;
 	t_list	*tmp;
-	t_list	*lstnew;
-	t_list	*res;
+	t_list	*tmp2;
+	t_list	*new;
 
-	lstnew = NULL;
+	new = f(lst);
+	tmp = ft_lstnew(new->content, new->content_size);
+	start = tmp;
+	tmp2 = tmp;
+	lst = lst->next;
 	while (lst)
 	{
-		tmp = f(lst);
-		if (!lstnew)
-		{
-			lstnew = tmp;
-			res = lstnew;
-			lstnew->next = NULL;
-		}
-		else
-		{
-			lstnew->next = tmp;
-			tmp->next = NULL;
-			lstnew = lstnew->next;
-		}
+		new = f(lst);
+		tmp = ft_lstnew(new->content, new->content_size);
+		tmp2->next = tmp;
 		lst = lst->next;
 	}
-	return (res);
+	return (start);
 }

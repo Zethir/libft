@@ -5,29 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 11:48:40 by cboussau          #+#    #+#             */
-/*   Updated: 2015/11/24 12:02:40 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/24 11:59:03 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 10:56:46 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	while (n > 0 && src[i])
+	while (i < len && src[i])
 	{
 		dst[i] = src[i];
 		i++;
-		--n;
 	}
-	while (n > 0)
+	while (i < len)
 	{
 		dst[i] = '\0';
 		i++;
-		--n;
 	}
 	return (dst);
 }

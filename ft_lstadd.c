@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 18:04:45 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/02 18:05:59 by cboussau         ###   ########.fr       */
+/*   Created: 2015/12/02 12:26:22 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 09:33:47 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	new->next = *alst;
-	*alst = new;
+	if (alst && new)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }

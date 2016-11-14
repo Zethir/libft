@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/28 20:01:52 by cboussau          #+#    #+#             */
-/*   Updated: 2015/11/30 16:23:40 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/27 15:37:23 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 09:38:10 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *p1;
-	unsigned char *p2;
+	unsigned char	*temp1;
+	unsigned char	*temp2;
 
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	while (n)
+	temp1 = (unsigned char *)s1;
+	temp2 = (unsigned char *)s2;
+	while (*temp1 == *temp2 && n > 0)
 	{
-		if (*p1 != *p2)
-			return (*p1 - *p2);
-		else
-		{
-			p1++;
-			p2++;
-		}
+		temp1++;
+		temp2++;
 		n--;
 	}
-	return (0);
+	if (n == 0)
+		return (0);
+	return (*temp1 - *temp2);
 }

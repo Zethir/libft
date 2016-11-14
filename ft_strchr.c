@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 15:20:13 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/02 15:10:35 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/25 10:50:34 by cboussau          #+#    #+#             */
+/*   Updated: 2016/10/30 17:42:49 by qdiaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char a;
+	char	*str;
 
-	a = (char)c;
+	if (c == '\0')
+		return ((char *)s + ft_strlen(s));
 	while (*s)
 	{
-		if (a == *s)
-			return ((char *)s);
+		if (*s == c)
+		{
+			str = (char *)s;
+			return (str);
+		}
 		s++;
 	}
-	if (*s == '\0' && a == '\0')
-		return ((char *)s);
 	return (NULL);
 }

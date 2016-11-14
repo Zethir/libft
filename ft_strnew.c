@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/01 10:06:17 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/02 16:23:21 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/30 15:39:10 by cboussau          #+#    #+#             */
+/*   Updated: 2016/10/22 16:10:25 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *ptr;
+	char	*str;
 
-	ptr = (char *)malloc(size * sizeof(*ptr));
-	if (ptr == NULL)
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
 		return (NULL);
-	else
-	{
-		ft_strclr(ptr);
-		return (ptr);
-	}
+	ft_bzero(str, (size + 1));
+	return (str);
 }

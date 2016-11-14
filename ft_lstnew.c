@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 17:11:28 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/02 17:46:19 by cboussau         ###   ########.fr       */
+/*   Created: 2015/12/02 12:10:22 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 09:36:17 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	t_list	*list;
 
 	list = (t_list *)malloc(sizeof(t_list));
-	if (list == NULL)
+	if (!list)
 		return (NULL);
 	if (content == NULL)
 	{
@@ -26,11 +26,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		list->content = malloc(content_size);
-		if (list->content == NULL)
-			return (NULL);
+		list->content = malloc(sizeof(content_size));
 		ft_memcpy(list->content, content, content_size);
 		list->content_size = content_size;
 	}
+	list->next = NULL;
 	return (list);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 15:32:34 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/01 09:52:07 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/27 10:48:22 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 09:38:42 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	size_t			i;
+	unsigned char	*d1;
+	unsigned char	*s2;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	while (n--)
-		*d++ = *s++;
+	i = 0;
+	d1 = (unsigned char *)dst;
+	s2 = (unsigned char *)src;
+	while (i < n)
+	{
+		d1[i] = s2[i];
+		i++;
+	}
 	return (dst);
 }

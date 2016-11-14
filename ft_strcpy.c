@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 11:43:25 by cboussau          #+#    #+#             */
-/*   Updated: 2015/11/25 17:16:01 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/23 17:54:50 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 10:51:01 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i])

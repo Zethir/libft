@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 16:18:24 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/04 17:36:08 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/25 17:53:27 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 11:00:46 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	int i;
+	int	i;
 	int j;
 
 	i = 0;
@@ -32,6 +32,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 				j++;
 			}
 			i++;
+			j = 0;
 		}
 	}
 	return (NULL);

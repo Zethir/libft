@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/01 11:44:15 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/01 14:00:02 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/30 15:48:20 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 10:55:00 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@ char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*s2;
 	int		i;
+	int		j;
 
 	i = 0;
-	s2 = ft_strdup(s);
-	if (s2 == NULL)
+	j = ft_strlen(s);
+	if (!s || !f)
 		return (NULL);
-	if (s != NULL && f != NULL)
+	s2 = (char *)malloc(sizeof(char) * (j + 1));
+	if (!s2)
+		return (NULL);
+	while (s[i])
 	{
-		while (s[i])
-		{
-			s2[i] = (*f)(s[i]);
-			i++;
-		}
+		s2[i] = f(s[i]);
+		i++;
 	}
+	s2[i] = '\0';
 	return (s2);
 }

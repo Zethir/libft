@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:56:12 by cboussau          #+#    #+#             */
-/*   Updated: 2015/11/30 16:36:42 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/26 13:33:05 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 09:26:37 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,24 @@
 
 int		ft_atoi(const char *str)
 {
-	int res;
-	int	sign;
+	int i;
+	int n;
 
-	res = 0;
-	sign = 1;
-	if (!str)
-		return (0);
-	while (*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f' ||
-			*str == '\r' || *str == ' ')
+	i = 0;
+	n = 1;
+	while (ft_isspace(*str))
 		str++;
-	if (*str == '-')
+	if (ft_strncmp(str, "-2147483648", 11) == 0)
+		return (-2147483648);
+	if (*str == '-' || *str == '+')
 	{
-		sign = -1;
+		n = (*str == '-') ? -1 : 1;
 		str++;
 	}
-	else if (*str == '+')
-		str++;
-	while (*str != '\0' && *str >= '0' && *str <= '9')
+	while (*str && *str >= '0' && *str <= '9')
 	{
-		res = res * 10 + *str - '0';
+		i = 10 * i + (*str - '0');
 		str++;
 	}
-	return (res * sign);
+	return (n * i);
 }

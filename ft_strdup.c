@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:18:46 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/02 16:50:23 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/23 15:10:35 by cboussau          #+#    #+#             */
+/*   Updated: 2016/10/22 16:06:40 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ char	*ft_strdup(const char *s1)
 {
 	char *s2;
 
-	s2 = (char *)malloc(sizeof(char) * (ft_strlen(s1 + 1)));
-	if (s2 == NULL)
+	if (!(s2 = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
 		return (NULL);
-	ft_strcpy(s2, s1);
-	return (s2);
+	return (ft_strcpy(s2, s1));
 }

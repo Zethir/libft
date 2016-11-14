@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 11:19:52 by cboussau          #+#    #+#             */
-/*   Updated: 2015/11/25 19:54:08 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/26 11:40:36 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 10:50:40 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned char *str1;
-	unsigned char *str2;
+	unsigned char *temp1;
+	unsigned char *temp2;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	while (*str1)
+	temp1 = (unsigned char *)s1;
+	temp2 = (unsigned char *)s2;
+	while (*temp1 && *temp1 == *temp2)
 	{
-		if (*str1 != *str2)
-			return ((int)(*str1 - *str2));
-		str1++;
-		str2++;
+		temp1++;
+		temp2++;
 	}
-	return ((int)(*str1 - *str2));
+	return (*temp1 - *temp2);
 }

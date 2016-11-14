@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 17:01:33 by cboussau          #+#    #+#             */
-/*   Updated: 2015/11/27 16:13:13 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/24 15:29:15 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 10:49:37 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	ft_strcpy(&s1[ft_strlen(s1)], s2);
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (s1[i])
+		i++;
+	while (s2[j])
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	s1[i] = '\0';
 	return (s1);
 }

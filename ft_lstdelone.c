@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 17:49:39 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/02 17:51:59 by cboussau         ###   ########.fr       */
+/*   Created: 2015/12/02 15:42:19 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 09:34:40 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
 	del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void **)alst);
+	free(*alst);
+	*alst = NULL;
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 18:28:13 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/01 09:52:26 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/30 09:45:48 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 10:46:23 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl(char const *s)
 {
-	write(1, s, ft_strlen(s));
+	ft_putstr(s);
 	ft_putchar('\n');
 }

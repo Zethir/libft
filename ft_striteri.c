@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cboussau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/01 11:15:29 by cboussau          #+#    #+#             */
-/*   Updated: 2015/12/01 12:55:57 by cboussau         ###   ########.fr       */
+/*   Created: 2015/11/30 12:57:11 by cboussau          #+#    #+#             */
+/*   Updated: 2016/04/12 10:53:26 by cboussau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i;
+	int	i;
 
 	i = 0;
-	if (s != NULL && f != NULL)
+	while (s[i])
 	{
-		while (*s)
-		{
-			(*f)(i, s);
-			s++;
-			i++;
-		}
+		f(i, &s[i]);
+		i++;
 	}
 }
